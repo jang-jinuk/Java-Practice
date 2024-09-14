@@ -1,4 +1,4 @@
-package lang.Wrapper;
+package lang.wrapper;
 
 public class WrapperVsPrimitive {
   public static void main(String[] args) {
