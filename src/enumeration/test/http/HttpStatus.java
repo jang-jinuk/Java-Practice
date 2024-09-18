@@ -23,15 +23,11 @@ public enum HttpStatus {
   }
 
   public static HttpStatus findByCode(int code) {
-    switch (code) {
-      case 200:
-        return OK;
-      case 400:
-        return BAD_REQUEST;
-      case 404:
-        return NOT_FOUND;
-      case 500:
-        return INTERNAL_SERVER_ERROR;
+    HttpStatus[] values = HttpStatus.values();
+    for (HttpStatus status : values) {
+      if (status.getCode() == code) {
+        return status;
+      }
     }
     return null;
   }
