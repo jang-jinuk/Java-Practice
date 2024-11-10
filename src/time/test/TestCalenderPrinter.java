@@ -14,22 +14,26 @@ public class TestCalenderPrinter {
     int year = scanner.nextInt();
     System.out.print("월을 입력하세요: ");
     int month = scanner.nextInt();
-    LocalDate inputDate = LocalDate.of(year, month, 1);
+    printCalender(year, month);
 
-    DayOfWeek firstDayOfWeek = inputDate.getDayOfWeek();
-    int lastDayOfMonth = inputDate.with(TemporalAdjusters.lastDayOfMonth()).getDayOfMonth();
+
+  }
+  public static void printCalender(int year, int month) {
+    LocalDate date = LocalDate.of(year, month, 1);
+    DayOfWeek firstDayOfWeek = date.getDayOfWeek();
+    int lastDayOfMonth = date.with(TemporalAdjusters.lastDayOfMonth()).getDayOfMonth();
 
     int depth = 0;
 
     switch (firstDayOfWeek) {
       case MONDAY: depth = 1;
-      break;
+        break;
       case TUESDAY: depth = 2;
-      break;
+        break;
       case WEDNESDAY: depth = 3;
-      break;
+        break;
       case THURSDAY: depth = 4;
-      break;
+        break;
       case FRIDAY: depth = 5;
     }
 
